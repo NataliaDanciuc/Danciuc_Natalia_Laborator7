@@ -1,7 +1,7 @@
 ﻿using System;
 using Danciuc_Natalia_Laborator7.Data;
 using System.IO;
-
+using Danciuc_Natalia_Laborator7;
 
 namespace Danciuc_Natalia_Laborator7;
 
@@ -23,9 +23,9 @@ public partial class App : Application
     }
 
     public App()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+        MainPage = new AppShell();
+    }
 }
