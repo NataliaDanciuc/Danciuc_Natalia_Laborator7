@@ -15,6 +15,13 @@ public partial class ShopPage : ContentPage
         await App.Database.SaveShopAsync(shop);
         await Navigation.PopAsync();
     }
+
+    async void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        var shop = (Shop)BindingContext;
+        await App.Database.DeleteShopAsync(shop);
+        await Navigation.PopAsync();
+    }
     async void OnShowMapButtonClicked(object sender, EventArgs e)
     {
         var shop = (Shop)BindingContext;
@@ -29,7 +36,7 @@ public partial class ShopPage : ContentPage
         var myLocation = new Location(46.7731796289, 23.6213886738);
         var distance = myLocation.CalculateDistance(location,
 DistanceUnits.Kilometers);
-        if (distance < 4)
+        if (distance < 7)
         {
             var request = new NotificationRequest
             {
